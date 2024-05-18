@@ -1,0 +1,18 @@
+{
+    "Print to console": {
+       "prefix": "log",
+       "body": [
+         "print('$1')",
+         "$0"
+       ],
+       "description": "Log output to console"
+    },
+    "Function definition": {
+       "prefix": "def",
+       "body": [
+         "def $1($2):",
+         "    $0"
+       ],
+       "description": "Define a function"
+    }
+   }
