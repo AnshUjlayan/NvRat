@@ -50,8 +50,7 @@ return {
         "clang-format",
         "eslint_d",
         "mypy",
-        "ruff",
-        "pyright",
+        "flake8",
       },
     })
   end,

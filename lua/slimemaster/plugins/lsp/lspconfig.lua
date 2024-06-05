@@ -73,12 +73,33 @@ return {
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    local signs = {
+      ["Error"] = " ",
+      ["Warn"] = " ",
+      ["Hint"] = "󰠠 ",
+      ["Info"] = " "
+    }
+    
+    -- Initialize the config tables
+    local sign_config = {
+      signs = {
+        text = {},
+        linehl = {},
+        numhl = {}
+      }
+    }
     for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+      local severity = vim.diagnostic.severity[type:upper()]
+      if severity then
+        -- Update the config tables directly
+        sign_config.signs.text[severity] = icon
+        sign_config.signs.linehl[severity] = "DiagnosticLine".. type
+        sign_config.signs.numhl[severity] = "DiagnosticNumber".. type
+      end
     end
+    vim.diagnostic.config(sign_config)
 
+    -- lsp
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
@@ -135,7 +156,12 @@ return {
       ["pyright"] = function()
         -- configure pyright language server
         lspconfig["pyright"].setup({
-          capabilities = capabilities,
+          -- capabilities = capabilities,
+          capabilities = (function()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+            return capabilities
+          end)(),
           settings = {
             python = {
               analysis = {

@@ -19,7 +19,7 @@ return {
         graphql = { "prettier" },
         liquid = { "prettier" },
         lua = { "stylua" },
-        python = { "isort", "black" },
+        python = { { "black", args = "--line-length=79" } },
         cpp = { "clang-format" },
       },
       format_on_save = {
