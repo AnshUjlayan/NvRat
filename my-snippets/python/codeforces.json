@@ -1,0 +1,26 @@
+{
+  "Codeforces Template Python": {
+    "prefix": "cf",
+    "body": [
+      "# ----------------------------------------------------------------------------",
+      "",
+      "def solve():",
+      "    pass",
+      "",
+      "# ----------------------------------------------------------------------------",
+      "",
+      "",
+      "def main():",
+      "    testcases = int(input())",
+      "    for _ in range(testcases):",
+      "        solve()",
+      "",
+      "",
+      "if __name__ == \"__main__\":",
+      "    main()",
+      "print('$1')",
+      "$0"
+    ],
+    "description": "Python template for competitive programming"
+  }
+}
