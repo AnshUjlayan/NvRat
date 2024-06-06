@@ -177,7 +177,6 @@ return {
         lspconfig["clangd"].setup({
           on_attach = function(client, bufnr)
             client.server_capabilities.signatureHelpProvider = false
-            on_attach(client, bufnr)
           end,
           capabilities = capabilities,
           -- Add any specific settings for clangd here
