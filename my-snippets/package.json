@@ -9,11 +9,7 @@
     "snippets": [
       {
         "language": "cpp",
-        "path": "cpp/read.json"
-      },
-      {
-        "language": "cpp",
-        "path": "cpp/codeforces.json"
+        "path": "cpp/write.json"
       },
       {
         "language": "cpp",
@@ -21,7 +17,11 @@
       },
       {
         "language": "cpp",
-        "path": "cpp/write.json"
+        "path": "cpp/codeforces.json"
+      },
+      {
+        "language": "cpp",
+        "path": "cpp/read.json"
       },
       {
         "language": "python",

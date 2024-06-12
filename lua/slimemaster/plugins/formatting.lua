@@ -10,7 +10,6 @@ return {
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
-        svelte = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
@@ -19,14 +18,19 @@ return {
         graphql = { "prettier" },
         liquid = { "prettier" },
         lua = { "stylua" },
-        python = { { "black", args = "--line-length=79" } },
+        python = { "isort", "black" },
         cpp = { "clang-format" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
+      formatters = {
+        black = {
+          prepend_args = { "--line-length", "79" },
+        },
       },
+        format_on_save = {
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 1000,
+        },
     })
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()

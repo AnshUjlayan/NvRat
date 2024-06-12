@@ -69,7 +69,7 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    capabilities.offsetEncoding = { 'utf-8' }
+    capabilities.offsetEncoding = { "utf-8" }
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -77,24 +77,24 @@ return {
       ["Error"] = " ",
       ["Warn"] = " ",
       ["Hint"] = "󰠠 ",
-      ["Info"] = " "
+      ["Info"] = " ",
     }
-    
+
     -- Initialize the config tables
     local sign_config = {
       signs = {
         text = {},
         linehl = {},
-        numhl = {}
-      }
+        numhl = {},
+      },
     }
     for type, icon in pairs(signs) do
       local severity = vim.diagnostic.severity[type:upper()]
       if severity then
         -- Update the config tables directly
         sign_config.signs.text[severity] = icon
-        sign_config.signs.linehl[severity] = "DiagnosticLine".. type
-        sign_config.signs.numhl[severity] = "DiagnosticNumber".. type
+        sign_config.signs.linehl[severity] = "DiagnosticLine" .. type
+        sign_config.signs.numhl[severity] = "DiagnosticNumber" .. type
       end
     end
     vim.diagnostic.config(sign_config)
@@ -107,33 +107,11 @@ return {
           capabilities = capabilities,
         })
       end,
-      ["svelte"] = function()
-        -- configure svelte server
-        lspconfig["svelte"].setup({
-          capabilities = capabilities,
-          on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePost", {
-              pattern = { "*.js", "*.ts" },
-              callback = function(ctx)
-                -- Here use ctx.match instead of ctx.file
-                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-              end,
-            })
-          end,
-        })
-      end,
       ["graphql"] = function()
         -- configure graphql language server
         lspconfig["graphql"].setup({
           capabilities = capabilities,
           filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-        })
-      end,
-      ["emmet_ls"] = function()
-        -- configure emmet language server
-        lspconfig["emmet_ls"].setup({
-          capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
       end,
       ["lua_ls"] = function()
@@ -179,10 +157,26 @@ return {
             client.server_capabilities.signatureHelpProvider = false
           end,
           capabilities = capabilities,
-          -- Add any specific settings for clangd here
+        })
+      end,
+      ["dockerls"] = function()
+        -- configure dockerls language server
+        lspconfig["dockerls"].setup({
+          capabilities = capabilities,
+        })
+      end,
+      ["jsonls"] = function()
+        -- configure jsonls language server
+        lspconfig["jsonls"].setup({
+          capabilities = capabilities,
+        })
+      end,
+      ["docker_compose_language_service"] = function()
+        -- configure docker_compose_language_service language server
+        lspconfig["docker_compose_language_service"].setup({
+          capabilities = capabilities,
         })
       end,
     })
   end,
 }
-
