@@ -22,6 +22,54 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- Harpoon keymaps
+keymap.set("n", "<leader>hh", function()
+  require("harpoon.mark").add_file()
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>ht", function()
+  require("harpoon.ui").toggle_quick_menu()
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hj", function()
+  require("harpoon.ui").nav_next()
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hk", function()
+  require("harpoon.ui").nav_prev()
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>ha", function()
+  require("harpoon.ui").nav_file(5)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hs", function()
+  require("harpoon.ui").nav_file(4)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hd", function()
+  require("harpoon.ui").nav_file(3)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hf", function()
+  require("harpoon.ui").nav_file(2)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>hg", function()
+  require("harpoon.ui").nav_file(1)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>h1", function()
+  require("harpoon.ui").nav_file(6)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>h2", function()
+  require("harpoon.ui").nav_file(7)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>h3", function()
+  require("harpoon.ui").nav_file(8)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>h4", function()
+  require("harpoon.ui").nav_file(9)
+end, { noremap = true, silent = true })
+keymap.set("n", "<leader>h5", function()
+  require("harpoon.ui").nav_file(10)
+end, { noremap = true, silent = true })
+
+-- Codeforces keymaps
+keymap.set("n", "<leader>pp", "<cmd>lua PasteClipboardToFile()<CR>", { desc = "Paste clipboard content to input.txt" })
+keymap.set("n", "<leader>go", "<cmd>lua CompileAndRun()<CR>", { desc = "Compile and run code" })
+
 -- Codeforces compile and run
 function CompileAndRun()
   local file = vim.fn.expand("%:p")
@@ -60,7 +108,3 @@ function PasteClipboardToFile()
   file:close()
   print("Clipboard content pasted to input.txt")
 end
-
--- keymaps
-vim.api.nvim_set_keymap("n", "<leader>pp", ":lua PasteClipboardToFile()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>go", ":lua CompileAndRun()<CR>", { noremap = true, silent = true })
