@@ -1,8 +1,9 @@
-# NeoSlime
+**This repo is supposed to used as config by NvChad users!**
 
-Neovim configuration for competitive programming and web development.
+- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
+- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
+- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
 
-rm ~/.local/share/nvim/mason/bin/clangd
-ln -s /usr/bin/clangd ~/.local/share/nvim/mason/bin/clangd
-ls -l ~/.local/share/nvim/mason/bin/clangd
-lrwxr-xr-x - anshujlayan 7 Jun 22:59  /Users/anshujlayan/.local/share/nvim/mason/bin/clangd -> /usr/bin/clangd
+# Credits
+
+1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
