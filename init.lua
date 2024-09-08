@@ -35,3 +35,6 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.g.vscode_snippets_path = "~/.config/nvim/my-snippets"
+print("It's Slime Time 🚀")
