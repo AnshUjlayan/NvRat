@@ -1,9 +1,29 @@
-**This repo is supposed to used as config by NvChad users!**
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+# NvRat
+***Slimy Neovim Configuration***
 
-# Credits
+![NvRat Dashboard](https://i.imgur.com/jkRjs2F.png)
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+## Overview
+NvRat is a streamlined Neovim configuration built on top of NvChad, designed to provide a powerful and efficient editing experience. This setup includes a handpicked collection of plugins for enhanced coding, navigation, and customization.
+
+## Features
+
+### Core Plugins
+- [NvChad](https://github.com/NvChad/NvChad)
+- [Copilot](https://github.com/github/copilot.vim)
+- [Harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
+- [Lazygit](https://github.com/kdheepak/lazygit.nvim)
+- [True-zen](https://github.com/pocco81/true-zen.nvim)
+- [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+
+### Snippet Management
+- Add your custom snippets under `my-snippets/language/snippet-name.json`.
+- After adding new snippets, run the snippet management script to ensure they are added to `package.json`, making them available for Lua-snip.
+  
+  ```bash
+  python3 my-snippets/create_package.py
+  ```
+
+## License
+[MIT](LICENSE)
