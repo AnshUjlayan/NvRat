@@ -5,7 +5,18 @@ local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- Language Servers
-local servers = { "lua_ls", "clangd", "pyright" ,"html", "cssls", "jsonls", "ts_ls", "tailwindcss", "dockerls" , "docker_compose_language_service"}
+local servers = {
+  "lua_ls",
+  "clangd",
+  "pyright",
+  "html",
+  "cssls",
+  "jsonls",
+  "ts_ls",
+  "tailwindcss",
+  "dockerls",
+  "docker_compose_language_service",
+}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -15,10 +26,3 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
-
--- configuring single server, example: typescript
--- lspconfig.tsserver.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
