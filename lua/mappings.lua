@@ -50,5 +50,4 @@ map("n", "<leader>cd", "<cmd> Copilot disable<CR>", { desc = "Copilot Disable" }
 -- utilities
 map("n", "<leader>go", utils.compile_and_run, { desc = "Utility Compile and Run" })
 map("n", "<leader>pp", utils.paste_clipboard, { desc = "Utility Paste clipboard content" })
-map("n", "<leader>pm", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Utility Markdown Preview" })
 map("n", "<leader>ut", "<cmd>UndotreeToggle<CR>", { desc = "Undo tree toggle" })
