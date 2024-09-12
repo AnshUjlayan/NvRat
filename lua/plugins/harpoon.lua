@@ -30,7 +30,7 @@ return {
 
     wk.add {
       {
-        "<leader>hh",
+        "<leader>hx",
         function()
           harpoon:list():add()
         end,
@@ -38,7 +38,7 @@ return {
         icon = "󰓾",
       },
       {
-        "<leader>ht",
+        "<leader>hh",
         function()
           toggle_telescope(harpoon:list())
         end,
@@ -46,7 +46,7 @@ return {
         icon = "",
       },
       {
-        "<leader>hn",
+        "<leader>hl",
         function()
           harpoon:list():next()
         end,

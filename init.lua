@@ -37,4 +37,4 @@ vim.schedule(function()
 end)
 
 vim.g.vscode_snippets_path = "~/.config/nvim/my-snippets"
-print("It's Slime Time 🚀")
+print "Welcome SlimeMaster 🐀"
