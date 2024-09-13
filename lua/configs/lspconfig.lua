@@ -7,12 +7,13 @@ local nvlsp = require "nvchad.configs.lspconfig"
 -- Language Servers
 local servers = {
   "lua_ls",
+  "rust_analyzer",
+  "ts_ls",
   "clangd",
   "pyright",
   "html",
   "cssls",
   "jsonls",
-  "ts_ls",
   "tailwindcss",
   "dockerls",
   "docker_compose_language_service",
@@ -35,6 +36,19 @@ lspconfig.lua_ls.setup {
     Lua = {
       diagnostics = {
         globals = { "vim" },
+      },
+    },
+  },
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
       },
     },
   },

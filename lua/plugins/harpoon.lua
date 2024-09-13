@@ -38,7 +38,7 @@ return {
         icon = "󰓾",
       },
       {
-        "<leader>hh",
+        "<leader>ht",
         function()
           toggle_telescope(harpoon:list())
         end,
