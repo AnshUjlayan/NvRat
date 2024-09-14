@@ -8,6 +8,24 @@
 
 NvRat is a streamlined Neovim configuration built on top of NvChad, designed to provide a powerful and efficient editing experience. This setup includes a handpicked collection of plugins for enhanced coding, navigation, and customization.
 
+## Get Started
+
+### Remove your existing nvim config
+
+```bash
+rm -rf ~/.config/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim
+```
+
+### Clone this repository
+
+```bash
+git clone https://github.com/AnshUjlayan/NvRat ~/.config/nvim && nvim
+```
+
+Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins.
+
 ## Features
 
 ### Core Plugins
