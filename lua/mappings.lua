@@ -65,5 +65,5 @@ map("n", "<leader>ut", "<cmd>UndotreeToggle<CR>", { desc = "Utility Undo tree to
 map("n", "[d", "[d", { desc = "LSP previous diagnostic" })
 map("n", "]d", "]d", { desc = "LSP next diagnostic" })
 map("n", "<C-w>d", "<C-w>d", { desc = "LSP show diagnostics under cursor" })
-map("n", "<C-n>", "<C-n>", { desc = "toggle Nvimtree" })
+map("n", "<C-n>", "<cmd> NvimTreeToggle<CR>", { desc = "toggle Nvimtree" })
 map("n", "<leader>cc", "<leader>cc", { desc = "move current context" })
