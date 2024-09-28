@@ -25,10 +25,10 @@ map("n", "J", "<C-d>", { desc = "move half page down" })
 map("n", "K", "<C-u>", { desc = "move half page up" })
 
 -- navigate
-map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Navigate pane left" })
-map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Navigate pane below" })
-map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Navigate pane above" })
-map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Navigate pane right" })
+map({ "n", "t" }, "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Navigate pane left" })
+map({ "n", "t" }, "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Navigate pane below" })
+map({ "n", "t" }, "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Navigate pane above" })
+map({ "n", "t" }, "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Navigate pane right" })
 
 -- window
 map("n", "<leader>wv", "<C-w>v", { desc = "Window Split vertically" })

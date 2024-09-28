@@ -59,17 +59,23 @@ M.cheatsheet = {
 M.mason = {
   cmd = true,
   pkgs = {
-    "lua_ls",
-    "rust-analyser",
-    "ts_ls",
+    -- LSP
+    "rust-analyzer",
     "clangd",
     "pyright",
-    "html",
-    "cssls",
-    "jsonls",
-    "tailwindcss",
-    "dockerls",
-    "docker_compose_language_service",
+    "typescript-language-server",
+    "tailwindcss-language-server",
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+    "lua-language-server",
+    "json-lsp",
+    "html-lsp",
+    "css-lsp",
+
+    -- Formatter
+    "black",
+    "stylua",
+    "prettier",
   },
 }
 
