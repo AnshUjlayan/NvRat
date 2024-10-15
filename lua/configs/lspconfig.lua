@@ -41,6 +41,13 @@ lspconfig.lua_ls.setup {
   },
 }
 
+lspconfig.clangd.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  cmd = { "/usr/bin/clangd" },
+}
+
 lspconfig.rust_analyzer.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
@@ -51,5 +58,11 @@ lspconfig.rust_analyzer.setup {
         allFeatures = true,
       },
     },
+  },
+  cmd = {
+    "rustup",
+    "run",
+    "stable",
+    "rust-analyzer",
   },
 }

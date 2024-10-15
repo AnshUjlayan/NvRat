@@ -3,9 +3,9 @@
     "prefix": "vout",
     "body": [
       "for (auto &val : ${1:arr}) {",
-      "  std::cout << val << \" \";",
+      "  cout << val << \" \";",
       "}",
-      "std::cout << '\\n';",
+      "cout << '\\n';",
       "$0"
     ],
     "description": "Output a 1D vector"
@@ -15,11 +15,11 @@
     "body": [
       "for (auto &${1:arr} : ${2:grid}) {",
       "  for (auto &val : $1) {",
-      "    std::cout << val << \" \";",
+      "    cout << val << \" \";",
       "  }",
-      "  std::cout << '\\n';",
+      "  cout << '\\n';",
       "}",
-      "std::cout << '\\n';",
+      "cout << '\\n';",
       "$0"
     ],
     "description": "Output a 2D vector"
@@ -28,9 +28,9 @@
     "prefix": "mpout",
     "body": [
       "for (auto &[${1:key}, ${2:val}] : ${3:mp}) {",
-      "  std::cout << $1 << \" --> \" << $2 << '\\n';",
+      "  cout << $1 << \" --> \" << $2 << '\\n';",
       "}",
-      "std::cout << '\\n';",
+      "cout << '\\n';",
       "$0"
     ],
     "description": "Output a map with key, value pairs"
