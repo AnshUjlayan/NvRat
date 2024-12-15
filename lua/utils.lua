@@ -5,7 +5,7 @@ M.compile_and_run = function()
   local filetype = vim.bo.filetype
   local cmd = ""
   if filetype == "cpp" then
-    cmd = "g++-14 -std=c++20 % -o %< && time ./%< && bat input.txt output.txt"
+    cmd = "g++-14 -std=c++23 % -o %< && time ./%< && bat input.txt output.txt"
   elseif filetype == "go" then
     cmd = "go run % && bat input.txt output.txt"
   elseif filetype == "rust" then

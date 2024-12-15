@@ -1,0 +1,25 @@
+return {
+  "mistricky/codesnap.nvim",
+  build = "make build_generator",
+  keys = {
+    { "<leader>ss", "<cmd>CodeSnap<cr>", mode = "x", desc = "CodeSnap Save to clipboard" },
+    { "<leader>sv", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "CodeSnap Save to Documents" },
+  },
+  opts = {
+    mac_window_bar = true,
+    title = "CodeSnap.nvim",
+    save_path = "~/Documents",
+    code_font_family = "CaskaydiaCove Nerd Font",
+    watermark_font_family = "Pacifico",
+    watermark = "@anshujlayan",
+    bg_theme = "default",
+    breadcrumbs_separator = "/",
+    has_breadcrumbs = true,
+    has_line_number = true,
+    show_workspace = false,
+    min_width = 0,
+    bg_x_padding = 122,
+    bg_y_padding = 82,
+    bg_padding = 0,
+  },
+}
