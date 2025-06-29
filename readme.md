@@ -2,7 +2,7 @@
 
 **_Slimy Neovim Configuration_**
 
-![NvRat Dashboard](https://i.imgur.com/jkRjs2F.png)
+<img width="1544" alt="NvRat Dashboard" src="https://github.com/user-attachments/assets/be0ec0fa-4179-4aa0-ae58-722b2f49d0da" />
 
 ## Overview
 
@@ -33,9 +33,12 @@ Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins.
 - [NvChad](https://github.com/NvChad/NvChad)
 - [Copilot](https://github.com/github/copilot.vim)
 - [Harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
+- [Flash](https://github.com/folke/flash.nvim)
+- [True-zen](https://github.com/pocco81/true-zen.nvim)
 - [Lazygit](https://github.com/kdheepak/lazygit.nvim)
 - [Undotree](https://github.com/mbbill/undotree)
-- [True-zen](https://github.com/pocco81/true-zen.nvim)
+- [Neoscroll](https://github.com/karb94/neoscroll.nvim)
+- [CodeSnap](https://github.com/mistricky/codesnap.nvim)
 - [Vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 
 ### Snippet Management
