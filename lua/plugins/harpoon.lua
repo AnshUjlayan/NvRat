@@ -28,54 +28,31 @@ return {
 
     harpoon.setup()
 
+    -- stylua: ignore
     wk.add {
       {
-        "<leader>hx",
-        function()
-          harpoon:list():add()
-        end,
-        desc = "harpoon mark file",
-        icon = "󰓾",
+        "<leader>hx", function() harpoon:list():add() end,
+        icon = "󰓾", desc = "harpoon mark file",
       },
       {
-        "<leader>ht",
-        function()
-          toggle_telescope(harpoon:list())
-        end,
-        desc = "harpoon toggle menu",
-        icon = "",
+        "<leader>ht", function() toggle_telescope(harpoon:list()) end,
+        icon = "", desc = "harpoon toggle menu",
       },
       {
-        "<leader>hl",
-        function()
-          harpoon:list():next()
-        end,
-        desc = "harpoon next mark",
-        icon = "󰛂",
+        "<leader>hl", function() harpoon:list():next() end,
+        icon = "󰛂", desc = "harpoon next mark",
       },
       {
-        "<leader>hp",
-        function()
-          harpoon:list():prev()
-        end,
-        desc = "harpoon prev mark",
-        icon = "󰛁",
+        "<leader>hp", function() harpoon:list():prev() end,
+        icon = "󰛁", desc = "harpoon prev mark",
       },
       {
-        "<leader>hd",
-        function()
-          harpoon:list():remove()
-        end,
-        desc = "harpoon delete mark",
-        icon = "",
+        "<leader>hd", function() harpoon:list():remove() end,
+        icon = "", desc = "harpoon delete mark",
       },
       {
-        "<leader>hc",
-        function()
-          harpoon:list():clear()
-        end,
-        desc = "harpoon nuke marks",
-        icon = "󰚤",
+        "<leader>hc", function() harpoon:list():clear() end,
+        icon = "󰚤", desc = "harpoon nuke marks",
       },
     }
   end,

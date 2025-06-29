@@ -17,6 +17,7 @@ unmap("n", "<C-l>")
 map("n", "<leader>ww", "<cmd>w<CR>", { desc = "General Write to file" })
 map("n", "<leader>Q", "<cmd>q!<CR>", { desc = "General Force Quit" })
 map("n", "<leader>q", "<cmd>qa<CR>", { desc = "General Quit All" })
+map("n", "<leader>cl", "%d<CR>", { desc = "General Clear File" })
 
 -- move
 map("n", "H", "^", { desc = "move start of line" })
@@ -55,6 +56,10 @@ map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Git LazyGit" })
 -- copilot
 map("n", "<leader>ce", "<cmd> Copilot enable<CR>", { desc = "Copilot Enable" })
 map("n", "<leader>cd", "<cmd> Copilot disable<CR>", { desc = "Copilot Disable" })
+
+-- code snap
+map("x", "<leader>ss", "<cmd>CodeSnap<cr>", { desc = "CodeSnap Save to clipboard" })
+map("x", "<leader>sv", "<cmd>CodeSnapSave<cr>", { desc = "CodeSnap Save to Documents" })
 
 -- utilities
 map("n", "<leader>go", utils.compile_and_run, { desc = "Utility Compile and Run" })

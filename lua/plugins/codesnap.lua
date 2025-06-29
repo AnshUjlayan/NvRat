@@ -1,9 +1,9 @@
 return {
   "mistricky/codesnap.nvim",
   build = "make build_generator",
-  keys = {
-    { "<leader>ss", "<cmd>CodeSnap<cr>", mode = "x", desc = "CodeSnap Save to clipboard" },
-    { "<leader>sv", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "CodeSnap Save to Documents" },
+  cmd = {
+    "CodeSnap",
+    "CodeSnapSave",
   },
   opts = {
     mac_window_bar = true,

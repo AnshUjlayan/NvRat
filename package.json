@@ -1,0 +1,32 @@
+{
+  "name": "my-snippets",
+  "version": "1.0.0",
+  "description": "My custom snippets",
+  "main": "index.js",
+  "author": "Ansh Ujlayan",
+  "license": "ISC",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "my-snippets/cpp/write.json"
+      },
+      {
+        "language": "cpp",
+        "path": "my-snippets/cpp/structs.json"
+      },
+      {
+        "language": "cpp",
+        "path": "my-snippets/cpp/codeforces.json"
+      },
+      {
+        "language": "cpp",
+        "path": "my-snippets/cpp/read.json"
+      },
+      {
+        "language": "python",
+        "path": "my-snippets/python/codeforces.json"
+      }
+    ]
+  }
+}
