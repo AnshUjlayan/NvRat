@@ -1,15 +1,19 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
+local lsp = vim.lsp.config
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- Language Servers
+-- common opts
+local opts = {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}
+
+-- servers with default config
 local servers = {
-  "lua_ls",
-  "rust_analyzer",
   "ts_ls",
-  "clangd",
   "pyright",
   "html",
   "cssls",
@@ -19,50 +23,39 @@ local servers = {
   "docker_compose_language_service",
 }
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
+for _, server in ipairs(servers) do
+  lsp(server, opts)
 end
 
-lspconfig.lua_ls.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
+-- lua_ls
+lsp(
+  "lua_ls",
+  vim.tbl_deep_extend("force", opts, {
+    settings = {
+      Lua = {
+        diagnostics = { globals = { "vim" } },
       },
     },
-  },
-}
+  })
+)
 
-lspconfig.clangd.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  cmd = { "/usr/bin/clangd" },
-}
+-- clangd
+lsp(
+  "clangd",
+  vim.tbl_deep_extend("force", opts, {
+    cmd = { "/usr/bin/clangd" },
+  })
+)
 
-lspconfig.rust_analyzer.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
+-- rust_analyzer
+lsp(
+  "rust_analyzer",
+  vim.tbl_deep_extend("force", opts, {
+    cmd = { "rustup", "run", "stable", "rust-analyzer" },
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = { allFeatures = true },
       },
     },
-  },
-  cmd = {
-    "rustup",
-    "run",
-    "stable",
-    "rust-analyzer",
-  },
-}
+  })
+)

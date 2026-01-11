@@ -60,6 +60,7 @@ M.mason = {
     -- LSP
     "rust-analyzer",
     "clangd",
+    "codelldb",
     "pyright",
     "typescript-language-server",
     "tailwindcss-language-server",

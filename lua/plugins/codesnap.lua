@@ -9,7 +9,7 @@ return {
     mac_window_bar = true,
     title = "CodeSnap.nvim",
     save_path = "~/Documents",
-    code_font_family = "CaskaydiaCove Nerd Font",
+    code_font_family = "JetBrainsMono Nerd Font",
     watermark_font_family = "Pacifico",
     watermark = "@anshujlayan",
     bg_theme = "default",
